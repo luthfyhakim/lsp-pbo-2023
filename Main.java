@@ -14,6 +14,7 @@ public class Main {
     System.out.println("1. Kubus");
     System.out.println("2. Balok");
     System.out.println("3. Bola");
+    System.out.println("4. Exit Program");
 
     System.out.print("Pilih Kode Bangun Ruang : ");
     int kode = input.nextInt();
@@ -28,8 +29,14 @@ public class Main {
       case 3:
         bola();
         break;
+      case 4:
+        System.out.println("================");
+        System.out.println("Exit Program ...");
+        System.out.println("================");
+        System.exit(0);
+        break;
       default:
-        System.out.println("Kode salah");
+        System.out.println("Maaf, Bangun Ruang Belum Tersedia");
         mainMenu();
     }
   }
@@ -82,6 +89,24 @@ public class Main {
   }
 
   public static void bola() {
+    Bola bola = new Bola();
 
+    System.out.print("Masukkan Jari - jari Bola = ");
+    int jari_jari = input.nextInt();
+    System.out.println("=========================");
+    System.out.println("Jari - jari Bola = " + jari_jari);
+    System.out.println("=========================");
+
+    bola.setJariJari(jari_jari);
+
+    System.out.println("Luas Permukaan Bola = " + "4 x " + Math.PI + " x " + jari_jari + " x " + jari_jari);
+    System.out.println("Luas Permukaan Bola = " + bola.luasPermukaan());
+    System.out.println("=========================");
+
+    System.out.println("Volume Bola = " + "(4/3) x " + Math.PI + " x " + jari_jari + " x " + jari_jari + " x " + jari_jari);
+    System.out.println("Volume Bola = " + bola.volume());
+    System.out.println("=========================");
+
+    bola.hasil();
   }
 }
